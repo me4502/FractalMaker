@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project FractalMaker with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <echo message="Ant java version: ${ant.java.version}" />
+        <jar destfile="M:/Users/Matthew/Desktop/FractalMaker.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="com.me4502.FractalMaker.FractalMaker"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ lwjgl_util.jar slick.jar lwjgl.jar lwjgl_util.jar SnakeYAML-1.11.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="C:/workspaces/Company/FractalMaker/bin"/>
+            <fileset dir="C:/workspaces/Company/MAPL/target/classes"/>
+            <zipfileset dir="C:\workspaces\Company\MAPL" includes="SnakeYAML-1.11.jar"/>
+            <zipfileset dir="C:\workspaces" includes="lwjgl.jar"/>
+            <zipfileset dir="C:\workspaces" includes="lwjgl_util.jar"/>
+            <zipfileset dir="C:\workspaces" includes="slick.jar"/>
+        </jar>
+    </target> 
+</project>
